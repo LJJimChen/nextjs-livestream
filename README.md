@@ -1,13 +1,13 @@
-# Livestream with LiveKit
+# Livestream
 
 > [!TIP]
-> This repo has been moved! 👉 [livekit-examples/livestream](https://github.com/livekit-examples/livestream)
+> This repo has been moved! 👉 [livestream](https://github.com/livekit-examples/livestream)
 
 Today most livestreams experience a 5–30 second lag, which is evident in the delay it takes for streamers to respond to chats. Those streams use HLS, which leverages existing CDNs by uploading 5–30 second video chunks, which clients download one chunk at a time. HLS is hugely scalable, but it comes with latency.
 
-LiveKit is a sort of WebRTC CDN, achieving sub-100ms latency for audiences of 1000 or 100,000 by streaming video over backbone Internet connections and only going over the public Internet for the last mile (that is, delivery to connected clients). This enables true real-time, large-scale events, where anyone and everyone can participate.
+This application uses a WebRTC CDN, achieving sub-100ms latency for audiences of 1000 or 100,000 by streaming video over backbone Internet connections and only going over the public Internet for the last mile (that is, delivery to connected clients). This enables true real-time, large-scale events, where anyone and everyone can participate.
 
-Built with [Next.js](https://nextjs.org/), [LiveKit Cloud](https://livekit.io/cloud), and [Radix UI](https://www.radix-ui.com/), this app is a full-stack web application that serves as a browser frontend application and as the backend API server for the clients. As a streamer, you can pick from broadcasting from either the browser via camera and microphone or from [OBS Studio](https://obsproject.com/) using an [LiveKit Ingress](https://livekit.io/product/ingress) endpoint. The application also features the ability to summon viewers from the audience onto the stage similar to X Spaces and Clubhouse.
+Built with [Next.js](https://nextjs.org/), a cloud-based real-time communication platform, and [Radix UI](https://www.radix-ui.com/), this app is a full-stack web application that serves as a browser frontend application and as the backend API server for the clients. As a streamer, you can pick from broadcasting from either the browser via camera and microphone or from [OBS Studio](https://obsproject.com/) using an ingress endpoint. The application also features the ability to summon viewers from the audience onto the stage similar to X Spaces and Clubhouse.
 
 ## Getting Started
 
@@ -19,13 +19,13 @@ cd nextjs-livestream
 npm install
 ```
 
-Create a new LiveKit project at [https://cloud.livekit.io](). Then create a new key in your [project settings](). With the provided credentials, create a new .env.development file and fill out the values below:
+Create a new project at [https://cloud.livekit.io](). Then create a new key in your [project settings](). With the provided credentials, create a new .env.development file and fill out the values below:
 
 ```
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-LIVEKIT_WS_URL=<websocket URL starting with wss://>
-LIVEKIT_API_KEY=<api key>
-LIVEKIT_API_SECRET=<api secret>
+WS_URL=<websocket URL starting with wss://>
+API_KEY=<api key>
+API_SECRET=<api secret>
 ```
 
 Then run the development server:
